@@ -1,7 +1,21 @@
 spring:
+  # datasource:
+  #   driver-class-name: org.postgresql.Driver
+  #   url: jdbc:${PG_CONNECTION_STRING}/user_data
+  #   username: ${PG_USER}
+  #   password: ${PG_PASSWORD}
+  # jpa:
+  #   database: postgresql
+  #   database-platform: org.hibernate.dialect.PostgreSQLDialect
+  #   show-sql: true
+  #   hibernate:
+  #     ddl-auto: update
+  #   properties:
+  #     hibernate:
+  #       format_sql: true
   data:
     mongodb:
-      uri: ${MONGODB_CONNECTION_STRING}
+      uri: ${MONGO_CONNECTION_STRING}
       database: user_data
   rabbitmq:
     host: localhost
@@ -10,7 +24,7 @@ spring:
     password: ${RABBITMQ_DEFAULT_PASS}
 
 server:
-  port: ${APP_USER_SERVICE_PORT}
+  port: ${APP_MICROSERVICE_USER_PORT}
 
 management:
   endpoints:

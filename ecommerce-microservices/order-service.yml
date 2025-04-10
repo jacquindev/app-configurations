@@ -1,10 +1,9 @@
 spring:
   # datasource:
   #   driver-class-name: org.postgresql.Driver
-  #   # url: jdbc:postgresql://localhost:${POSTGRES_LOCAL_PORT}/order_data
-  #   url: jdbc:${POSTGRES_CONNECTION_STRING}
-  #   username: ${POSTGRES_USER}
-  #   password: ${POSTGRES_PASSWORD}
+  #   url: jdbc:${PG_CONNECTION_STRING}/order_data
+  #   username: ${PG_USER}
+  #   password: ${PG_PASSWORD}
   # jpa:
   #   database: postgresql
   #   database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -14,18 +13,19 @@ spring:
   #   properties:
   #     hibernate:
   #       format_sql: true
+
   data:
     mongodb:
-      uri: ${MONGODB_CONNECTION_STRING}
+      uri: ${MONGO_CONNECTION_STRING}
       database: order_data
   rabbitmq:
     host: localhost
     port: ${RABBITMQ_AMQP_LOCAL_PORT}
-    username: ${RABBITMQ_DEFAULT_USER}
-    password: ${RABBITMQ_DEFAULT_PASS}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASS}
 
 server:
-  port: ${APP_ORDER_SERVICE_PORT}
+  port: ${APP_MICROSERVICE_ORDER_PORT}
 
 management:
   endpoints:
