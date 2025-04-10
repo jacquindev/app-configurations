@@ -1,17 +1,21 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:${POSTGRES_LOCAL_PORT}/product_data
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
-  jpa:
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
+  # datasource:
+  #   url: jdbc:postgresql://localhost:${POSTGRES_LOCAL_PORT}/product_data
+  #   username: ${POSTGRES_USER}
+  #   password: ${POSTGRES_PASSWORD}
+  # jpa:
+  #   database: postgresql
+  #   database-platform: org.hibernate.dialect.PostgreSQLDialect
+  #   show-sql: true
+  #   hibernate:
+  #     ddl-auto: update
+  #   properties:
+  #     hibernate:
+  #       format_sql: true
+  data:
+    mongodb:
+      uri: ${MONGODB_CONNECTION_STRING}
+      database: product_data
   rabbitmq:
     host: localhost
     port: ${RABBITMQ_AMQP_LOCAL_PORT}
