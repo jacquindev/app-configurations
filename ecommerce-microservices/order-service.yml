@@ -1,9 +1,10 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:${POSTGRES_LOCAL_PORT}/order_data
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
+    # url: jdbc:postgresql://localhost:${POSTGRES_LOCAL_PORT}/order_data
+    url: jdbc:${POSTGRES_CONNECTION_STRING}
+    # username: ${POSTGRES_USER}
+    # password: ${POSTGRES_PASSWORD}
   jpa:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
