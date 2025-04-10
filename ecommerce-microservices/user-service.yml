@@ -20,8 +20,8 @@ spring:
   rabbitmq:
     host: localhost
     port: ${RABBITMQ_AMQP_LOCAL_PORT}
-    username: ${RABBITMQ_DEFAULT_USER}
-    password: ${RABBITMQ_DEFAULT_PASS}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASS}
 
 server:
   port: ${APP_MICROSERVICE_USER_PORT}
