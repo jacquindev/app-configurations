@@ -3,6 +3,11 @@ spring:
     mongodb:
       uri: ${MONGODB_CONNECTION_STRING}
       database: user_data
+  rabbitmq:
+    host: localhost
+    port: ${RABBITMQ_AMQP_LOCAL_PORT}
+    username: ${RABBITMQ_DEFAULT_USER}
+    password: ${RABBITMQ_DEFAULT_PASS}
 
 server:
   port: ${APP_USER_SERVICE_PORT}

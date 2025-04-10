@@ -13,6 +13,11 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  rabbitmq:
+    host: localhost
+    port: ${RABBITMQ_AMQP_LOCAL_PORT}
+    username: ${RABBITMQ_DEFAULT_USER}
+    password: ${RABBITMQ_DEFAULT_PASS}
 
 server:
   port: ${APP_ORDER_SERVICE_PORT}
