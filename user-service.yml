@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_CONNECTION_STRING}
+      database: user_data
+
+server:
+  port: ${APP_USER_SERVICE_PORT}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+      max-history: 7
