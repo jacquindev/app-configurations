@@ -29,6 +29,9 @@ server:
   port: ${APP_MICROSERVICE_ORDER_PORT}
 
 management:
+  endpoint:
+    shutdown:
+      access: unrestricted
   endpoints:
     web:
       exposure:
