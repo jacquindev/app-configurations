@@ -16,8 +16,7 @@ spring:
   data:
     mongodb:
       uri: ${MONGO_CONNECTION_STRING}
-      database: user_data
-      uuid-representation: standard
+      database: ${MONGO_DATABASE}
   rabbitmq:
     host: localhost
     port: ${RABBITMQ_AMQP_LOCAL_PORT}
@@ -26,6 +25,13 @@ spring:
 
 server:
   port: ${APP_MICROSERVICE_USER_PORT}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
 
 management:
   endpoint:
