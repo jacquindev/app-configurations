@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: http://localhost:${APP_MICROSERVICE_PRODUCT_PORT}
+          predicates:
+            - Path=/api/products/**
+        - id: user-service
+          uri: http://localhost:${APP_MICROSERVICE_USER_PORT}
+          predicates:
+            - Path=/api/users/**
+        - id: order-service
+          uri: http://localhost:${APP_MICROSERVICE_ORDER_PORT}
+          predicates:
+            - Path=/api/orders/**, /api/cart/**
+
+server:
+  port: ${APP_MICROSERVICE_GATEWAY_PORT}
+
