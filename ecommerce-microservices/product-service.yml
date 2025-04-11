@@ -17,6 +17,7 @@ spring:
     mongodb:
       uri: ${MONGO_CONNECTION_STRING}
       database: product_data
+      uuid-representation: standard
   rabbitmq:
     host: localhost
     port: ${RABBITMQ_AMQP_LOCAL_PORT}
